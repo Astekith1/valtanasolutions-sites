@@ -22,8 +22,14 @@
         </span>
         <span class="brand__name">Valtana Solutions LLC</span>
       </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="nav-links" aria-label="Primary">
         <a href="#what">What We Do</a>
+        <a href="#process">How We Work</a>
         <a href="#about">About</a>
         <a class="btn" href="#contact">Contact</a>
       </nav>
@@ -63,7 +69,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2"/><path d="M8 18h9a3 3 0 0 0 3-3v-1a2 2 0 0 0-2-2h-2l-2-3 2-2"/><circle cx="17" cy="5" r="2"/></svg>
             </div>
             <h3>Custom Robotics &amp; Automation</h3>
-            <p>We design, build, and integrate systems—from articulated arms to machine vision—solving what off‑the‑shelf tools can’t.</p>
+            <p>We design, build, and integrate systems—from articulated arms to machine vision—solving what off‑the‑shelf tools can't.</p>
           </article>
           <article class="card">
             <div class="icon">
@@ -76,11 +82,48 @@
       </div>
     </section>
 
+    <!-- PROCESS -->
+    <section id="process" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>How We Work</h2>
+          <p class="muted">A streamlined approach from discovery to deployment.</p>
+        </header>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h3>Discovery &amp; Audit</h3>
+            <p>We begin with a comprehensive review of your current processes, identifying pain points and opportunities for automation.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h3>Design &amp; Planning</h3>
+            <p>Custom solutions are designed with your specific needs in mind, balancing performance, cost, and scalability.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h3>Development &amp; Integration</h3>
+            <p>We build and integrate systems that work seamlessly with your existing infrastructure, minimizing disruption.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">04</div>
+            <h3>Support &amp; Optimization</h3>
+            <p>Ongoing maintenance and continuous improvement ensure your automation delivers value long-term.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section id="about" class="section alt">
       <div class="container split">
         <div class="media">
-          <img src="/assets/img/founder.jpg" alt="Founder working with a robotic assembly">
+          <div class="media-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <!-- <img src="/assets/img/founder.jpg" alt="Founder working with a robotic assembly"> -->
         </div>
         <div class="content">
           <h2>About <span class="hl" id="founder-name">Van Vo</span>, Founder</h2>
@@ -95,20 +138,62 @@
       <div class="container">
         <header class="section-head">
           <h2>Let's Talk</h2>
-          <p class="muted">Ready to discuss your process?</p>
+          <p class="muted">Ready to discuss your automation needs? Send us a message.</p>
         </header>
 
         <div class="card contact">
-          <ul class="contact-list">
-            <li><strong>Name:</strong> <span id="contact-name">Van Vo</span>, Founder</li>
-            <li><strong>Phone:</strong> <a id="contact-phone" href="tel:+1REPLACE">[Your Phone Number]</a></li>
-            <li><strong>Email:</strong> <a id="contact-email" href="mailto:info@valtanasolutions.com">info@valtanasolutions.com</a></li>
-            <li><strong>Location:</strong> Valtana Solutions LLC | Garland, TX</li>
-          </ul>
-          <div class="contact-actions">
-            <a class="btn" href="#top">Back to top</a>
-            <a class="btn" href="mailto:info@valtanasolutions.com?subject=Project%20Inquiry%20-%20Valtana%20Solutions">Email us</a>
+          <div class="contact-header">
+            <p class="muted">Fill out the form below and we'll get back to you as soon as possible.</p>
           </div>
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+              <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Your Full Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+              <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell us about your automation needs..."></textarea>
+              <span class="error-message" id="message-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+              <p class="field-help">If you require a callback, please provide your phone number and preferred time slot for a call.</p>
+            </div>
+
+            <div class="form-group">
+              <label class="radio-label">Would you like to receive updates and news from us?</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input type="radio" name="updates" value="Yes" required>
+                  <span>Yes, sign me up for updates</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="updates" value="No">
+                  <span>No, thank you</span>
+                </label>
+              </div>
+              <span class="error-message" id="updates-error"></span>
+            </div>
+
+            <div class="form-message" id="form-message"></div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loader" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -116,7 +201,22 @@
 
   <footer class="site-footer">
     <div class="container">
-      © <span id="year"></span> Valtana Solutions LLC • Robotics & Automation
+      <div class="footer-content">
+        <div class="footer-copyright">
+          © <span id="year"></span> Valtana Solutions LLC • Robotics & Automation
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <strong>Name:</strong> <span id="footer-contact-name">Van Vo</span>, Founder
+          </div>
+          <div class="footer-contact-item">
+            <strong>Phone:</strong> <a id="footer-contact-phone" href="tel:+1REPLACE">[Your Phone Number]</a>
+          </div>
+          <div class="footer-contact-item">
+            <strong>Email:</strong> <a id="footer-contact-email" href="mailto:info@valtanasolutions.com">info@valtanasolutions.com</a>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
