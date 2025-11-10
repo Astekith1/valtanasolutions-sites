@@ -4,21 +4,18 @@
 
   // Example of simple config override capability (edit values below or set via JSON)
   const config = {
-    founderName: 'Van Vo', // change once here
+    companyName: 'Valtana Solutions LLC',
     email: 'vanvo@valtanasolutions.com',
     phoneText: '+1 (469)-773-1102',
-    phoneHref: '+14697731102',
-    linkedin: 'https://www.linkedin.com/in/vvo6/'
+    phoneHref: '+14697731102'
   };
   const byId = id => document.getElementById(id);
   const set = (id, text) => { const n = byId(id); if (n) n.textContent = text; };
   const setHref = (id, href, text) => { const n = byId(id); if (n){ n.href = href; if (text) n.textContent = text; } };
 
-  set('founder-name', config.founderName);
-  set('footer-contact-name', config.founderName);
+  set('footer-contact-name', config.companyName);
   setHref('footer-contact-email', 'mailto:' + config.email, config.email);
   setHref('footer-contact-phone', 'tel:' + config.phoneHref, config.phoneText);
-  const li = document.getElementById('linkedin'); if (li) li.href = config.linkedin;
 
   // Mobile navigation toggle
   const navToggle = document.querySelector('.nav-toggle');
